@@ -479,6 +479,11 @@ body {
 
             .company {
                 margin-top: 5px;
+
+                & + .company {
+                    margin-top: 2px;
+                    color: #888;
+                }
             }
 
             .period {
@@ -490,7 +495,7 @@ body {
             .highlights {
                 margin-top: 25px;
                 color: #888;
-                max-width: 280px;
+                max-width: 240px;
                 margin-left: auto;
                 font-weight: 300;
             }
@@ -509,17 +514,33 @@ body {
                 top: 0;
                 left: 0;
                 margin-left: -6px;
+                margin-top: 6px;
                 border: @button-color solid 2px;
                 border-radius: 10px;
                 background-color: #f6f6f6;
             }  
+
+            &.end {
+                padding-bottom: 0;
+
+                .pr-ellip {
+                    padding-bottom: 0;
+                }
+            }
+        }
+
+        .pr-ellip {
+            color: #ddd;
+            font-size: 14px;
+            text-align: left;
+            padding: 10px 0;
         }
     }
 }
 
 .project {
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 
     .pr-title {
         font-weight: bold;
@@ -531,22 +552,45 @@ body {
     }
 
     .pr-features {
-
+        padding-bottom: 10px;
     }
 
     .pf-list {
         .nl;
-        padding: 15px 0 0 15px;
+        padding: 15px 0 0 20px;
 
         & > li {
             margin-bottom: 10px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
     }
 }
         
+.ite {
+    margin-bottom: 5px;
 
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
 
+.edu-item {
+    margin-bottom: 15px;
 
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .title {
+        font-weight: bold;
+    }
+    .desc {
+        color: #888;
+    }
+}
 
 
 
