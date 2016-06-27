@@ -1,0 +1,185 @@
+resultslab2
+-----------
+::
+A post-training impact assessment tool for organizations that tracks 
+the effectiveness of corporate trainings, team-building workshops, 
+and any form of formal or informal non-technical learning interventions.
+::
+
+Designed and implemented the complete Frontend and Backend
+
+Some key functionalities I implemented include content sharing, user roles, 
+social elements such as liking and commenting, notifications,
+email, file sharing, etc.
+
+I also handled bug fixes and patches, custom features for clients, 
+automatic backups and maintenance.
+
+<a href="https://www.resultslab.in">Go to product page</a>
+
+rcat1
+-----
+::
+A competency based assessment tool for organizations to test non-technical skills of employees such as communication, client management, etc. It allows organizations to determine the type of non-technical training employees require.
+::
+
+Designed and implemented the complete Frontend and Backend.
+
+Some key functionalities I implemented include test-taking or assessment platform, reports with several charts and graphs, notifications, peer assesment through email invitations, etc.
+
+I also handled bug fixes, patches and maintenance.
+
+
+
+Opening Day Movie Tickets
+
+A small script I wrote in <b>Python</b> that played a song (alert), when the box office opened after midnight, for the premiere of <b>Batman vs Superman: The Dawn of Justice</b>. It worked by scraping websites of a few online ticket booking services repeatedly through the night, every few seconds.
+
+Sudoku Solver
+
+An application <b>I wrote in Highschool</b> using <i>Visual Basic 6.0</i>, that solves Sudoku puzzles by listing possibilites in a 3-dimensional array, eliminating them, at times retracing steps back, etc to arrive at a solution.
+
+3D-plotting Tool
+
+An application <b>I wrote in Highschool</b> using <i>Visual Basic 6.0</i>, that reads 3-dimensional coordinates for vertices and edges, and plots them in a window, with <b>perspective distortion</b> etc. The plotted objects could be then rotated by dragging the cursor over the object. It also handled some basic coloring of planes, but it turned out to be quite sluggish as the shading library was entirely written by me in Visual Basic.
+
+
+
+
+* Folders functionality added 
+* Activate or Deactivate folders for organization
+* Set storage limit for organizations
+* Super admins can view Storage Usage by organization
+* Admins can view organization storage usage and limit
+* Create Folder
+* Set Folder open/closed
+* Set Folder publicity
+* Edit Folder
+* Delete Folder
+* Add Contributors
+* Set Contributors Read / Write Permissions
+* Add New Users to DB
+* Send welcome mail with password and link
+* Edit Contributors Read / Write Permissions
+* Delete Contributors
+* Upload Files
+* Edit Files
+* Delete Files
+* Download Files
+* View Images in Image Gallery
+* View Files Count in Homepage
+* View Folder Size for Admins in Homepage
+* Show Files based on Publicity Setting
+* Notifications on upload of new files
+* Reverse lookup of hashtag urls for highlighting files based on url
+
+
+## v2.5.3
+---------
+
+* new home page with links to resultslab cms
+* changes to like button, `Unlike` is now `Liked`
+* more event information in event details like active users etc [partially done]
+* schedule a demo form with email on home page
+* minor SEO optimizations
+
+
+## v2.5.2
+---------
+
+* fixed notifications going to all managers of participant irrespective of event
+* added unsubscribe to instant email notifications
+* multiline comments with autogrow support added in broadcasts and feed
+* notifications page now has mark all as read
+* sent notifiers are now saved and can be seen in 'Manage Event' tab
+
+
+## v2.5.1 
+---------
+
+* fixed broadcast edit error due to unescaped multiline string in script
+* fixed disappearing notifications on broadcast update
+* send emails for each new notification
+* send weekly summary of unread notifications
+* show auto generated password next to new admins.
+
+
+## v2.5
+-------
+
+* make answer public or private (event wide)
+* clean up and bring back notifications on event public-private status change
+* remove broadcast comment notifications & like notifications when broadcast is deleted
+* add notifications when public answer is added
+* fix feed for users who are managers + participant in another group
+* managers can only notify group participants
+* remove answer comment notifications & like notifications when answer is deleted
+* fix self notification for broadcast like
+* fixed field errors on editing broadcasts with manager + participants
+* now clicking on active event tab refreshes page
+* fixed broken menu (due to addition of notification icon)
+* fixed broadcast turning into a new broadcast on edit and resave.
+* fixed see who liked this broadcast and watchers popup for participants
+* users like and comment on each other's answers + notification
+* added garbage collection for read notifications older than 2 months
+* google analytics for resultslab and resultslab users
+* fixed issue where anybody could comment on public answers
+* edit answers + answer has been edited tag
+* delete answers + remove notification
+* move participants between groups
+* remove participants (only if no answers)
+* remove groups (only if no participants)
+* broadcasts should have break lines 
+* google apps login
+* super admins can add, edit, delete organizations and manage admins
+* user feedback
+
+
+## v2.4.x
+---------
+
+* Fixed Website Urls In Emails
+* Added Terms Of Service And Privacy Policy
+* Mandrill Integration Complete, Including Notify People Feature.
+* Ported Mandrill To Auth Module
+* Configured And Integrated Mandrill Api For Emails.
+
+
+## v2.4
+-------
+
+* New Broadcast + Tagged In Broadcast
+* Liked Your Broadcast
+* New Broadcast Comment (bc)-> Objectid Is Userid
+* Liked Your Broadcast Comment
+* New Star Response Comment
+* Fixed Create Event Plus Icon
+* Fixed Super Admin Panel Reset Password Link
+* Load Notifications Badge On Page Render, Backend (before Ajax)
+* Add New Star Response Notifications For Supers, Admins And Managers.
+* Fetch Full Notification With Icons, Detail Etc.
+* Add Training Manager Interface
+* Edit And Delete Broadcast
+* Remove And Re Add Notifications On Broadcast Update
+* See All Notifications
+* Email Notification For Added Trainers
+* Notify People Feature
+
+
+## v2.3.x 
+---------
+
+* Added Login_check For External Apps
+* Fix - New Participants Added Only One Mail Per Edit - Was: One Mail Per New Participant
+* Fix - Managepeople Ui Fix
+* Security Fix 2.3.201502261605 - Fixed Passwords Being Sent Out To Wrong Participants
+* Fix 2.3.201501221820 - Ssl Recaptcha Fixes
+* Fix 2.3.201501141739 - Keep GET Variables When Redirected To auth with goto=
+
+
+## v2.2
+-------
+
+* Stable 2.2.201412221635
+
+
