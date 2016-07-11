@@ -339,6 +339,8 @@
                                                 <div class="pr-desc">
                                                 A post-training impact assessment tool for organizations that tracks the effectiveness of corporate trainings, team-building workshops, and any form of formal or informal non-technical learning interventions.</div>
 
+                                                <span class="marker"><span id="resultslab2"></span></span>
+
                                                 <div class="pr-desc d-sub">Release 1</div>
                                                 
                                                 <div class="pr-features">
@@ -353,6 +355,8 @@
                                                     </ul>
                                                 </div>
 
+                                                <span class="marker"><span id="resultslab3"></span></span>
+
                                                 <div class="pr-desc d-sub"><i>Release 2</i></div>
 
                                                 <div class="pr-features">
@@ -365,6 +369,9 @@
                                             </div>
                                             <!-- // -->
                                             <div class="project">
+
+                                                <span class="marker"><span id="rcat"></span></span>
+
                                                 <div class="pr-title">Ripples Competency Assessment Tool</div>
                                                 <div class="pr-desc">A competency based assessment tool for organizations to test non-technical skills of employees such as communication, client management, etc. It allows organizations to determine the type of non-technical training employees require.</div>
 
@@ -508,7 +515,7 @@
                                                     <ul class="pf-list">
                                                         <li>A really small (Its actually just over 20 lines of code) <b>PHP framework</b> for static pages, with rudimentary routing and templates functionality. You can quickly whip up a small static website in no time.</li>
 
-                                                        <li><a target="_blank" href="http://github.com/aravindanve/tiny-fw">See it on Github</a></li>
+                                                        <li><a target="_blank" href="../tiny-fw">TinyFW Homepage &rarr;</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -727,7 +734,52 @@
         crossorigin="anonymous"></script>
     <script src="../js/sticky-kit.min.js"></script>
     <script>
-        $(document).ready(function () {$(".navigation").stick_in_parent();});
+        $(document).ready(function () {
+            $(".navigation").stick_in_parent();
+
+            if (window.location.hash && window.location.hash.trim()) {
+                var marker = '#' + window.location.hash.replace(/^#/, ''),
+                    $marker = $(marker);
+
+                if ($marker.length) {
+                    var $highlight = $('<div></div>').css({
+                            position: 'absolute',
+                            top: 0,
+                            right: 0,
+                            bottom: 0,
+                            left: 0,
+                            backgroundColor: '#FFF2AA',
+                            borderRadius: '5px'
+                        }),
+                        $wrapper = $('<div></div>').css({
+                            position: 'relative'
+                        });
+
+                    $marker.parents('.project').css({
+                        position: 'relative',
+                        margin: '-5px -5px 15px',
+                        padding: '5px 5px 15px'
+
+                    }).children()
+                    .appendTo($wrapper).end().end()
+                    .prepend($wrapper).prepend($highlight);
+
+                    $highlight.animate({
+                        opacity: 0
+
+                    }, 10000, function () {
+                        $highlight.remove();
+                        $wrapper.children()
+                            .appendTo($wrapper.parent().css({
+                                position: '',
+                                margin: '',
+                                padding: ''
+                            }));
+                        $wrapper.remove();
+                    });
+                }
+            }
+        });
     </script>
 </body>
 </html>
