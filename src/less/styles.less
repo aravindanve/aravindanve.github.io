@@ -768,12 +768,20 @@ body {
                 img {
                     max-height: 100%;
                 }
+
+                @media (max-width: @screen-sm) {
+                    text-align: left;
+                }
             }
         }
 
         .title {
             text-align: right;
             padding-bottom: 15px;
+
+            @media (max-width: @screen-sm) {
+                text-align: left;
+            }
 
             .role {
                 font-weight: bold;
@@ -800,6 +808,11 @@ body {
                 max-width: 240px;
                 margin-left: auto;
                 font-weight: 300;
+
+                @media (max-width: @screen-sm) {
+                    margin-left: 0;
+                    margin-right: auto;
+                }
             }
         }
 
@@ -808,6 +821,11 @@ body {
             padding-bottom: 15px;
             // border-left: @button-color solid 2px;
             border-left: @blah-color solid 2px;
+
+            @media (max-width: @screen-sm) {
+                border-left-width: 10px;
+                margin-bottom: 15px;
+            }
 
             &:before {
                 content: '';
@@ -960,4 +978,135 @@ span.marker {
         height: 70px;
     }
 }
+
+// print
+
+// @page {
+//   size: A4;
+//   margin: 0;
+// }
+
+// @media print {
+//   html, body {
+//     width: 210mm;
+//     height: 297mm;
+//   }
+//   /* ... the rest of the rules ... */
+// }
+
+.html {
+
+    &, body {
+        position: absolute;
+        width: 210mm;
+        height: 297mm;
+    }
+
+    .gen-cols(@lbl, @n, @i: 1) when (@i =< @n)  {
+        &.@{lbl}-@{i} {
+            width: (@i * 100% / @n); 
+        }
+        .gen-cols(@lbl, @n, (@i + 1));
+    }
+
+    .row {
+        .col {
+            .gen-cols(xs, 12);
+            .gen-cols(sm, 12);
+            .gen-cols(md, 12);
+            .gen-cols(lg, 12);
+        }
+    }
+
+    body {
+        background-color: #fff;
+    }
+
+    header, footer, .navigation {
+        display: none;
+    }
+
+    .resume-page {
+        margin-left: 0 !important;
+        width: 100% !important;
+
+        .resume-section {
+            background-color: #fff;
+            margin-bottom: 0;
+            padding: 0 0 10px;
+            .box-shadow(0, 0, 0, 0, transparent);
+        }
+    }  
+
+    .card {
+        .soc-links {
+            display: none;
+        }
+    }
+
+    button.download, 
+    .button.download {
+        display: none;
+    }
+
+    .skills {
+        .skills-section {
+            margin-bottom: 10px;
+
+            .ss-title {
+                padding: 5px 0;
+                margin-bottom: 0;
+            }
+
+            .ss-ellip {
+                display: none;
+            }
+        }
+
+        .skill {
+            .cf;
+            padding: 4px 0 0;
+            margin-bottom: 4px;
+
+            .desc {
+                margin-top: 0;
+            }
+
+            .rating {
+                margin-top: 1px;
+                border-bottom-width: 2px;
+
+                .liquid {
+                    border-bottom-width: 2px;
+
+                    &.s-plus { // 80+
+                        border-bottom-color: darken(#3AC381, 5%);
+                    }
+
+                    &.s-good { // 70+
+                        border-bottom-color: #4486E6;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
