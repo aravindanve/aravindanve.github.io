@@ -43,14 +43,13 @@ body {
     position: relative;
     min-height: 400px;
     height: 100%;
-    // background: url(../images/banner.jpg) #333 center no-repeat;
-    // background: url(../images/banner-o.jpg) #333 center no-repeat;
     // background-color: #482448;
-    // background-size: cover;
+    background: url(../images/banner.jpg) #333 right no-repeat;
+    background-size: cover;
     color: @white;
-    .gradient(#222, #222);
 
     .content {
+        position: relative;
         .abs-vert-center;
         text-align: center;
         padding: 15px;
@@ -60,8 +59,18 @@ body {
             font-weight: bold;
             margin-bottom: 15px;
 
-            .desig {
-                color: @green;
+            .t1 {
+                text-transform: uppercase;
+                font-size: 38px;
+                font-weight: bold;
+                color: #fff;
+            }
+
+            .t2 {
+                text-transform: uppercase;
+                font-size: 23px;
+                font-weight: bold;
+                color: #35B9CF;
             }
         }
 
@@ -72,6 +81,8 @@ body {
                 color: @white;
                 padding: 6px 8px;
                 border-radius: 4px;
+                text-transform: uppercase;
+                text-decoration: none;
 
                 &:hover {
                     background-color: rgba(0,0,0,0.2);
@@ -101,6 +112,28 @@ body {
             &:hover {
                 color: @white;
             }
+        }
+    }
+
+    .banner-bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+
+        img, video {
+            max-width: 100%;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: fade(#333, 82%);
         }
     }
 }
