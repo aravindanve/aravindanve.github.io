@@ -20,6 +20,14 @@ body {
     background-color: #e2e3e4;
 }
 
+.gradient(@start, @end) {
+    background: @start;
+    background: -moz-linear-gradient(left, @start 0%, @end 100%);
+    background: -webkit-linear-gradient(left, @start 0%,@end 100%);
+    background: linear-gradient(to right, @start 0%,@end 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@{start}', endColorstr='@{end}',GradientType=1);
+}
+
 .abs-vert-center {
     position: absolute;
     top: 0;
@@ -27,7 +35,7 @@ body {
     bottom: 0;
     left: 0;
     // width: 80%;
-    height: 20%;
+    height: 30%;
     margin: auto;
 }
 
@@ -36,9 +44,11 @@ body {
     min-height: 400px;
     height: 100%;
     // background: url(../images/banner.jpg) #333 center no-repeat;
-    background: url(../images/banner-o.jpg) #333 center no-repeat;
-    background-size: cover;
+    // background: url(../images/banner-o.jpg) #333 center no-repeat;
+    // background-color: #482448;
+    // background-size: cover;
     color: @white;
+    .gradient(#222, #222);
 
     .content {
         .abs-vert-center;
@@ -211,53 +221,110 @@ body {
     }
 }
 
-.project-thumbs {
+.thumbs {
     padding: 0 15px;
 }
 
-.project-thumb {
+.thumb {
     display: block;
     text-decoration: none;
     position: relative;
-    border-radius: 3px;
+    border-radius: 4px;
     overflow: hidden;
-    color: #000;
+    color: #fff;
+    background-color: #222;
     margin-bottom: 30px;
     .box-shadow(0, 1px, 1px, 0, rgba(0,0,0,0.1));
 
     &:hover {
-        color: #000;
+        color: #fff;
+        text-decoration: none;
     }
 
     .thumb-banner {
-        height: 220px;
-        background-color: #efefef;
+        height: 240px;
+
+        .itx {
+            font-size: 120px;
+            line-height: 1;
+            padding-top: 80px;
+            padding-bottom: 40px;
+            text-align: center;
+            // line-height: 240px;
+        }
     }
 
     .thumb-content {
         .cf;
-        background-color: #f6f6f6;
+        height: 100px;
         padding: 15px;
 
         .thumb-title {
             .ep;
             // font-size: 22px;
             // font-weight: 300;
+            text-align: center;
             font-size: 18px;
             margin-bottom: 15px;
+        }
+    }
+
+    .thumb-inside {
+        display: none;
+
+        padding: 0 30px 15px;
+        height: 240px;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .thumb-tags {
+        text-align: center;
+    }
+
+    .cover {
+        height: 240px + 100px;
+    }
+
+    &:hover {
+        background-color: #fff;
+        color: #000;
+
+        .thumb-banner { 
+            display: none;
+        }
+
+        .thumb-content {
+            padding-top: 25px;
+
+            .thumb-title {
+                margin-bottom: 10px;
+            }
+        }
+
+        .thumb-inside {
+            display: block;
+        }
+
+        .thumb-tags {
+            .tag {
+                border: fade(#444, 60%) solid 1px;
+                color: #444;
+            }
         }
     }
 }
 
 .tag {
-    float: left;
+    display: inline-block;
+    // float: left;
     padding: 3px 5px 4px;
     margin-right: 6px;
     margin-bottom: 6px;
     border-radius: 3px;
     background-color: transparent;
-    border: fade(#666, 60%) solid 1px;
-    color: #666;
+    border: fade(#bbb, 60%) solid 1px;
+    color: #bbb;
     font-weight: 300;
     font-size: 14px;
 
@@ -363,6 +430,14 @@ body {
         // text-transform: uppercase;
         // font-weight: 300;
         line-height: 1;
+    }
+
+    .contact {
+        font-weight: normal;
+    }
+
+    .action {
+        margin-top: 10px;
     }
 
     .title {
@@ -585,6 +660,8 @@ body {
 
 .project {
     position: relative;
+    padding-bottom: 15px;
+    border-bottom: @button-color solid 1px;
     margin-bottom: 15px;
 
     .pr-title {
@@ -657,7 +734,31 @@ body {
     }
 }
 
+button.download, 
+.button.download {
+    border-color: @link-color;
+    color: @link-color;
+    background-color: transparent;
+    padding: 6px 15px;
 
+    &:hover, &:active {
+        background-color: @link-color;
+        color: #fff;
+    }
+}
 
+.scrmbl {
+    position: relative;
 
+    .x, .dg, .sdfh, .jf, .dfh, .rhc {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: transparent;
+    }
+    .yj, .dhr, .er, .mes, .erj {
+        top: 0;
+        left: 0;
+    }
+}
 
