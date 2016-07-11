@@ -20,11 +20,11 @@ body {
     background-color: #e2e3e4;
 }
 
-.gradient(@start, @end) {
+.gradient(@start, @end, @dir: 45deg) {
     background: @start;
-    background: -moz-linear-gradient(left, @start 0%, @end 100%);
-    background: -webkit-linear-gradient(left, @start 0%,@end 100%);
-    background: linear-gradient(to right, @start 0%,@end 100%);
+    background: -moz-linear-gradient(@dir, @start 0%, @end 100%);
+    background: -webkit-linear-gradient(@dir, @start 0%,@end 100%);
+    background: linear-gradient(@dir, @start 0%,@end 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@{start}', endColorstr='@{end}',GradientType=1);
 }
 
@@ -70,7 +70,8 @@ body {
                 text-transform: uppercase;
                 font-size: 23px;
                 font-weight: bold;
-                color: #35B9CF;
+                // color: #35B9CF;
+                color: #20DBF1;
             }
         }
 
@@ -274,6 +275,46 @@ body {
         text-decoration: none;
     }
 
+    &.spl-tf {
+        .gradient(#1A7CE3, #21B3D2);
+
+        .thumb-banner .itx {
+            color: #fff;
+        }
+    }
+
+    &.spl-rl3 {
+        .gradient(#22B7A4, #22B670);
+
+        .thumb-banner .itx {
+            color: #fff;
+        }
+    }
+
+    &.spl-cf {
+        .gradient(#56ABD2, #A6C6E2);
+
+        .thumb-banner .itx {
+            color: #fff;
+        }
+    }
+
+    &.spl-rl2 {
+        .gradient(#F05F62, #F89C5A);
+
+        .thumb-banner .itx {
+            color: #fff;
+        }
+    }
+
+    &.spl-ar {
+        .gradient(#8B54C4, #6E74EF);
+
+        .thumb-banner .itx {
+            color: #fff;
+        }
+    }
+
     .thumb-banner {
         height: 240px;
 
@@ -319,6 +360,26 @@ body {
         height: 240px + 100px;
     }
 
+    &[class^="spl-"], &[class*=" spl-"] {
+        &:hover {
+            background: #fff;
+            background-color: #fff;
+            color: #000;
+
+            .thumb-banner .itx {
+                color: #000;
+                color: #10ED7B;
+            }
+        }
+    }
+
+    &.spl-tf {
+        &:hover {
+            background-color: #fff;
+            color: #000;
+        }
+    }
+
     &:hover {
         background-color: #fff;
         color: #000;
@@ -356,8 +417,8 @@ body {
     margin-bottom: 6px;
     border-radius: 3px;
     background-color: transparent;
-    border: fade(#bbb, 60%) solid 1px;
-    color: #bbb;
+    border: fade(#eee, 60%) solid 1px;
+    color: #eee;
     font-weight: 300;
     font-size: 14px;
 
