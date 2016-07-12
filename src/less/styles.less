@@ -1092,27 +1092,57 @@ span.marker {
 
 // print
 
-.print-only {
+.print-only, .print-link {
     display: none;
 }
 
-.sdgsg-html {
+@media print  {
 
-    .print-only {
+    .resume-section, .resume-page, 
+    .container,
+    .container > .row,
+    .container > .row > .col,
+    .section, .wrapper,
+    body, html {
+        float: none !important;
+    }
+
+    .pb-after {
+        page-break-after: always;
+    }
+
+    .pb-before {
+        page-break-before: always;
+    }
+
+    .print-only, .print-link {
         display: initial;
+    }
+
+    .print-link {
+        color: @link-color;
+
+        .pr-lbl {
+            color: #000;
+        }
     }
 
     .dont-print {
         display: none !important;
     }
 
-    &, body {
+    @page { 
+        // size: 8.5in 11in;
+        // margin: 2cm 
+        size: 210mm 297mm;
+    }
+
+    html, body {
         max-width: 210mm;
-        max-height: 297mm;
     }
 
     body {
-        background-color: #fff;
+        background-color: transparent;
         font-size: 14px;
     }
 
@@ -1133,10 +1163,10 @@ span.marker {
         .resume-section {
             position: relative;
             border-radius: 0;
-            background-color: #fff;
-            padding: 0 0 10px;
+            background-color: transparent;
+            padding: 0 0 5px;
             border-bottom: #000 solid 1px;
-            margin: 0 0 20px;
+            margin: 0 0 15px;
             .box-shadow(0, 0, 0, 0, transparent);
 
             .rs-title {
@@ -1161,6 +1191,14 @@ span.marker {
 
     [class*="-vert-divide "], [class$="-vert-divide"] {
         border-right-width: 0 !important;
+    }
+
+    [data-anim-highlight] {
+        display: none;
+    }
+
+    .marker {
+        display: none;
     }
 
     .card {
@@ -1240,6 +1278,120 @@ span.marker {
                         border-bottom-color: #4486E6;
                     }
                 }
+            }
+        }
+    }
+
+    @passion-line-color-print: lighten(@passion-line-color, 30%);
+    .timeline {
+
+        .story {
+            &.passion {
+
+                .desc {
+                    border-left-color: @passion-line-color-print;
+
+                    &:before {
+                        border-color: @passion-line-color-print;
+                    }
+                }
+            }
+
+            .toggle {
+                display: none;
+            }
+
+            .story-section-title {
+                page-break-after: avoid;
+                position: relative;
+                border-width: 0;
+                border-radius: 0;
+                background-color: transparent;
+                margin-right: 0;
+                height: 30px;
+                line-height: 30px;
+                padding-top: 0;
+                padding-bottom: 0;
+
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    border-bottom: #eee solid 30px;
+                    background-color: #ff0;
+                    z-index: -1;
+                }
+            }
+
+            .title {
+                width: 30% !important;
+
+                @media (max-width: @screen-sm) {
+                    width: 100% !important;
+                }
+
+                .company, .period {
+                    font-size: 12px;
+                }
+
+                .stew {
+                    height: 50px;
+                }
+            }
+
+            .desc {
+                width: 70% !important;
+
+                @media (max-width: @screen-sm) {
+                    width: 100% !important;
+                }
+            }
+
+            .pr-ellip {
+                display: none;
+            }
+        }
+    }
+
+    .project {
+        padding: 0 0 10px;
+
+        .pr-desc {
+            margin-top: 5px;
+            color: #000;
+
+            &.d-sub {
+                margin-top: 5px;
+            }
+        }
+
+        .pr-features {
+            // padding-bottom: 10px;
+
+            &:last-child {
+                padding-bottom: 10px;
+                // border-bottom: @button-color solid 1px;
+                margin-bottom: 0;
+            }
+
+            .highlights & {
+                &:last-child { 
+                    padding-bottom: 10px;
+                    margin-bottom: 0;
+                    border-bottom-width: 0;
+                }
+            }
+        }
+
+        .pf-list {
+            padding-top: 10px;
+
+            & > li {
+                margin-bottom: 5px;
             }
         }
     }
