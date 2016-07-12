@@ -971,7 +971,15 @@
                 }
             }
 
-            var $highlight = $('<div></div>').css({
+            // reset previous
+            $('[data-anim-highlight]').finish().remove();
+            $('[data-anim-wrapper]').each(function () {
+                $(this).children()
+                    .appendTo($(this).parent());
+                $(this).remove();
+            }); 
+
+            var $highlight = $('<div data-anim-highlight></div>').css({
                     position: 'absolute',
                     top: 0,
                     right: 0,
@@ -981,14 +989,11 @@
                     borderRadius: '5px',
                     margin: '-8px -8px 10px'
                 }),
-                $wrapper = $('<div></div>').css({
+                $wrapper = $('<div data-anim-wrapper></div>').css({
                     position: 'relative'
                 });
 
-            $marker.parents('.project').css({
-                position: 'relative'
-
-            }).children()
+            $marker.parents('.project').children()
             .appendTo($wrapper).end().end()
             .prepend($wrapper).prepend($highlight);
 
@@ -998,11 +1003,7 @@
             }, 10000, function () {
                 $highlight.remove();
                 $wrapper.children()
-                    .appendTo($wrapper.parent().css({
-                        position: '',
-                        margin: '',
-                        padding: ''
-                    }));
+                    .appendTo($wrapper.parent());
                 $wrapper.remove();
             });
 
