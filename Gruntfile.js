@@ -10,7 +10,8 @@ module.exports = function(grunt) {
 			},
 			dev: {
 				files: {
-					'css/styles.min.css': 'src/less/styles.less'
+					'css/styles.min.css': 'src/less/styles.less',
+					'css/print.min.css': 'src/less/print.less'
 				}
 			}
 		},

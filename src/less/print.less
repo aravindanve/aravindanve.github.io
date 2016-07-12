@@ -1,0 +1,323 @@
+/* 
+ * print styles for aravindanve.github.io/resume
+ * by @aravindanve
+ * http://github.com/aravindanve
+ * version 1.0
+ *
+ **/
+
+@import (reference) url(candyfrost-lite.less);
+@import (reference) url(styles.less);
+
+.print-only, .print-link {
+    display: none;
+}
+
+@media print  {
+
+    .resume-section, .resume-page, 
+    .container,
+    .container > .row,
+    .container > .row > .col,
+    .section, .wrapper,
+    body, html {
+        float: none !important;
+    }
+
+    .pb-after {
+        page-break-after: always;
+    }
+
+    .pb-before {
+        page-break-before: always;
+    }
+
+    .print-only, .print-link {
+        display: initial;
+    }
+
+    .print-link {
+        color: @link-color;
+
+        .pr-lbl {
+            color: #000;
+        }
+    }
+
+    .dont-print {
+        display: none !important;
+    }
+
+    @page { 
+        // size: 8.5in 11in;
+        // margin: 2cm 
+        size: 210mm 297mm;
+    }
+
+    html, body {
+        max-width: 210mm;
+    }
+
+    body {
+        background-color: transparent;
+        font-size: 14px;
+    }
+
+    header, footer, .navigation {
+        display: none;
+    }
+
+    .section {
+        padding: 0;
+        margin: 0;
+    }
+
+    .resume-page {
+        margin: 0;
+        margin-left: 0 !important;
+        width: 100% !important;
+
+        .resume-section {
+            position: relative;
+            border-radius: 0;
+            background-color: transparent;
+            padding: 0 0 5px;
+            border-bottom: #000 solid 1px;
+            margin: 0 0 15px;
+            .box-shadow(0, 0, 0, 0, transparent);
+
+            .rs-title {
+                font-size: 12px;
+                font-weight: bold;
+                color: #000;
+            }
+
+            .rs-para {
+                padding: 0;
+                margin-bottom: 10px;
+            }
+
+            .rs-fnote {
+                position: absolute;
+                bottom: 0;
+                font-size: 10px;
+                margin-bottom: 5px;
+            }
+        }
+    }  
+
+    [class*="-vert-divide "], [class$="-vert-divide"] {
+        border-right-width: 0 !important;
+    }
+
+    [data-anim-highlight] {
+        display: none;
+    }
+
+    .marker {
+        display: none;
+    }
+
+    .card {
+        .name {
+
+        }
+
+        .contact {
+            &:first-child {
+                margin-top: 12px;
+            }
+        }
+
+        .action {
+            display: none;
+        }
+
+        .title {
+            margin-top: 5px;
+        }
+
+        .soc-links {
+            display: none;
+        }
+    }
+
+    .skills {
+        .cf;
+
+        .skills-section {
+            margin-bottom: 20px;
+
+            .ss-title {
+                padding: 0;
+                margin-bottom: 5px;
+                font-size: 12px;
+                text-transform: none;
+                border-bottom: none;
+            }
+
+            .ss-ellip {
+                display: none;
+            }
+        }
+
+        .skill {
+            .cf;
+            padding: 0;
+            margin-bottom: 10px;
+
+            .name {
+                &.emp {
+                    display: inline;
+                    background-color: transparent;
+                    border-radius: 0;
+                    padding: 0;
+                    margin: 0;
+                }
+            }
+
+            .desc {
+                margin-top: 0;
+            }
+
+            .rating {
+                margin-top: 1px;
+                border-bottom-width: 2px;
+
+                .liquid {
+                    border-bottom-width: 2px;
+
+                    &.s-plus { // 80+
+                        border-bottom-color: darken(#3AC381, 5%);
+                    }
+
+                    &.s-good { // 70+
+                        border-bottom-color: #4486E6;
+                    }
+                }
+            }
+        }
+    }
+
+    @passion-line-color-print: lighten(@passion-line-color, 30%);
+    .timeline {
+
+        .story {
+            &.passion {
+
+                .desc {
+                    border-left-color: @passion-line-color-print;
+
+                    &:before {
+                        border-color: @passion-line-color-print;
+                    }
+                }
+            }
+
+            .toggle {
+                display: none;
+            }
+
+            .story-section-title {
+                page-break-after: avoid;
+                position: relative;
+                border-width: 0;
+                border-radius: 0;
+                background-color: transparent;
+                margin-right: 0;
+                height: 30px;
+                line-height: 30px;
+                padding-top: 0;
+                padding-bottom: 0;
+
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    border-bottom: #eee solid 30px;
+                    background-color: #ff0;
+                    z-index: -1;
+                }
+            }
+
+            .title {
+                width: 30% !important;
+
+                @media (max-width: @screen-sm) {
+                    width: 100% !important;
+                }
+
+                .company, .period {
+                    font-size: 12px;
+                }
+
+                .stew {
+                    height: 50px;
+                }
+            }
+
+            .desc {
+                width: 70% !important;
+
+                @media (max-width: @screen-sm) {
+                    width: 100% !important;
+                }
+            }
+
+            .pr-ellip {
+                display: none;
+            }
+        }
+    }
+
+    .project {
+        padding: 0 0 10px;
+
+        .pr-desc {
+            margin-top: 5px;
+            color: #000;
+
+            &.d-sub {
+                margin-top: 5px;
+            }
+        }
+
+        .pr-features {
+            // padding-bottom: 10px;
+
+            &:last-child {
+                padding-bottom: 10px;
+                // border-bottom: @button-color solid 1px;
+                margin-bottom: 0;
+            }
+
+            .highlights & {
+                &:last-child { 
+                    padding-bottom: 10px;
+                    margin-bottom: 0;
+                    border-bottom-width: 0;
+                }
+            }
+        }
+
+        .pf-list {
+            padding-top: 10px;
+
+            & > li {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
