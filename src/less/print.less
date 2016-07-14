@@ -51,11 +51,23 @@
     @page { 
         // size: 8.5in 11in;
         // margin: 2cm 
+        // size: A4;
         size: 210mm 297mm;
+        margin: 24mm 8mm;
     }
 
     html, body {
-        max-width: 210mm;
+        // max-width: 210mm;
+        width: 210mm !important;
+        height: auto;
+        overflow: hidden;
+        // overflow-x: hidden; // breaks page-break-after
+    }
+
+    @-moz-document url-prefix() { 
+        html, body { 
+            width: 900px !important;
+        }
     }
 
     body {
@@ -65,6 +77,10 @@
 
     header, footer, .navigation {
         display: none;
+    }
+
+    .navigation + div {
+        display: none !important;
     }
 
     .section {
