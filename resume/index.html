@@ -36,6 +36,7 @@
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
         ga('create', 'UA-69869442-1', 'auto');
+        ga('require', 'linkid');
         ga('send', 'pageview');
     </script>
 </head>
@@ -62,8 +63,8 @@
                                             <div class="name">Aravindan Ve</div>
                                             <div class="title">Web Developer, Aspiring Engineer</div>
                                             <div class="soc-links">
-                                                <a target="_blank" href="https://github.com/aravindanve">GitHub</a> &bull;
-                                                <a target="_blank" href="https://www.linkedin.com/in/aravindanve">LinkedIn</a>
+                                                <a id="githubLink" target="_blank" href="https://github.com/aravindanve">GitHub</a> &bull;
+                                                <a id="linkedinLink" target="_blank" href="https://www.linkedin.com/in/aravindanve">LinkedIn</a>
                                             </div>
                                             <div class="print-only">
                                                 aravindanve.github.io
@@ -87,7 +88,7 @@
                                                 </div>
                                             </div>
                                             <div class="action">
-                                                <a class="button download" target="_blank" href="../resume.pdf" download="Resume-AravindanVe.pdf">Download PDF</a>
+                                                <a id="pdfDownloadLink" class="button download" target="_blank" href="../resume.pdf" download="Resume-AravindanVe.pdf">Download PDF</a>
                                             </div>
                                             <div class="print-only">
                                                 linkedin.com/in/aravindanve
@@ -449,7 +450,7 @@
 
                                                             <li>I also handled bug fixes and patches, custom features for clients, automatic backups and maintenance.</li>
 
-                                                            <li><a class="dont-print" target="_blank" href="https://www.resultslab.in">Go to product page &rarr;</a><span class="print-link"><span class="pr-lbl">See product page at</span> www.resultslab.in</span></li>
+                                                            <li><a id="resultslabLink" class="dont-print" target="_blank" href="https://www.resultslab.in">Go to product page &rarr;</a><span class="print-link"><span class="pr-lbl">See product page at</span> www.resultslab.in</span></li>
                                                         </ul>
                                                     </div>
 
@@ -689,7 +690,7 @@
                                                         <ul class="pf-list">
                                                             <li>A really small (Its actually just over 20 lines of code) <b>PHP framework</b> for static pages, with rudimentary routing and templates functionality. You can quickly whip up a small static website in no time.</li>
 
-                                                            <li><a class="dont-print" target="_blank" href="../tiny-fw">TinyFW Homepage &rarr;</a><span class="print-link"><span class="pr-lbl">See product page at</span> aravindanve.github.io/tiny-fw</span></li>
+                                                            <li><a id="tinyfwLink" class="dont-print" target="_blank" href="../tiny-fw">TinyFW Homepage &rarr;</a><span class="print-link"><span class="pr-lbl">See product page at</span> aravindanve.github.io/tiny-fw</span></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -821,7 +822,7 @@
                                                     <div class="pr-features">
                                                         <ul class="pf-list">
                                                             <li>Co-produced several independent short film projects and Ad specs with an associate. Also handled Cinematography, Lighting, Color-grading and Post-production on the said projects.</li>
-                                                            <li><a class="dont-print" target="_blank" href="http://vimeo.com/aravindanve/showreel">Watch showreel on Vimeo</a><span class="print-link"><span class="pr-lbl">Watch the showreel at</span> vimeo.com/aravindanve/showreel</span></li>
+                                                            <li><a id="vimeoLink" class="dont-print" target="_blank" href="http://vimeo.com/aravindanve/showreel">Watch showreel on Vimeo</a><span class="print-link"><span class="pr-lbl">Watch the showreel at</span> vimeo.com/aravindanve/showreel</span></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -963,7 +964,7 @@
     <footer>
         <div class="section">
             <div class="container">
-                <div class="footer-text">&copy; Copyright <a href="https://github.com/aravindanve">Aravindan Ve</a></div>
+                <div class="footer-text">&copy; Copyright <a id="githubFooterLink" href="https://github.com/aravindanve">Aravindan Ve</a></div>
             </div>
         </div>
     </footer>
