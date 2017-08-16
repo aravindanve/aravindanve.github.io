@@ -24,10 +24,10 @@ function sizeToPx(str, scale) {
 }
 
 function savePdf() {
-    var pageWidth = sizeToPx(size[0], scale),
-        pageHeight = sizeToPx(size[1], scale),
-        marginTop = sizeToPx(size[2], scale),
+    var marginTop = sizeToPx(size[2], scale),
         marginLeft = sizeToPx(size[3], scale),
+        pageWidth = sizeToPx(size[0], scale),
+        pageHeight = sizeToPx(size[1], scale),
         margin = {
             top: marginTop,
             right: marginLeft,

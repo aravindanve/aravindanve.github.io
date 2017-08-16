@@ -15,6 +15,16 @@
 
 @media print  {
 
+    html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box;
+    }
+
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+
     .resume-section, .resume-page, 
     .container,
     .container > .row,
@@ -53,12 +63,13 @@
         // margin: 2cm 
         // size: A4;
         size: 210mm 297mm;
-        margin: 24mm 8mm;
+        margin: 18mm 9mm;
     }
 
     html, body {
         // max-width: 210mm;
-        width: 210mm !important;
+        // width: 210mm !important;
+        width: (210mm - 26mm) !important; // BUGFIX: right bleed
         height: auto;
         overflow: hidden;
         // overflow-x: hidden; // breaks page-break-after
