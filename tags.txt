@@ -1,6 +1,0 @@
-JS/NodeJs   -- js
-Python      -- python
-PHP         -- php
-MySQL       -- sql
-MongoDB     -- mongo
-LESS/CSS    -- css
