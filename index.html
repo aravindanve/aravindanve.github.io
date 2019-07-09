@@ -4,46 +4,190 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
-    crossorigin="anonymous">
-
-    <style>
-      body {
-        background: rgb(26, 27, 27);
-        color: rgb(219, 188, 11);
-        font-family: monospace;
-      }
-      .message {
-        font-size: 18px;
-        padding: 50px;
-        margin-top: 30%;
-      }
-      a {
-        color: rgb(219, 11, 184) !important;
-      }
-      a:hover {
-        color: rgb(243, 96, 219) !important;
-      }
-    </style>
-
-  <title>Portfolio/R&eacute;sum&eacute; - Aravindan Ve</title>
+  <link rel="stylesheet" href="fontello-7f66f729/css/fontello.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .clearfix {
+      overflow: auto;
+    }
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    body {
+      padding: 0;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    article {
+      max-width: 720px;
+      margin: 15px auto;
+      /* background-color: teal; */
+    }
+    section {
+      margin: 15px;
+    }
+    header {
+      font-weight: bold;
+      font-size: 1.2rem;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: solid 1px black;
+    }
+    ul {
+      margin-top: 6px;
+    }
+    .no-style-link {
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .user-card {
+      margin: 15px 0;
+      /* background-color: yellow; */
+    }
+    .user-card-image {
+      float: left;
+      width: 15%;
+    }
+    .user-card-image img {
+      max-width: 100%;
+      border-radius: 1000px;
+      margin: 15px 0;
+    }
+    .user-card-info {
+      margin-left: 15%;
+      padding-left: 15px;
+      width: 85%;
+    }
+    .user-card-info-primary {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+    .user-card-info-primary, .user-card-info-secondary {
+      margin: 15px 0;
+    }
+    .phone {
+      display: inline-block;
+      font-size: 0.9rem;
+      margin-bottom: 2px;
+    }
+    .email {
+      color: mediumblue;
+    }
+    .section-body {
+      margin: 0 0 25px;
+    }
+    .section-sub-header {
+      margin: 10px 0 5px;
+      font-size: 0.9rem;
+      font-weight: bolder;
+    }
+    .section-sub-body {
+      margin: 5px 0 10px;
+    }
+    .novice {
+      font-style: italic;
+    }
+    .date-range {
+      font-weight: normal;
+      font-style: italic;
+    }
+  </style>
 </head>
-
 <body>
-  <div class="message">
-    my portfolio/r&eacute;sum&eacute; is temporarily offline.<br>
-    meanwhile, you can find me at <a href="https://github.com/aravindanve">github.com/aravindanve</a> or <a href="https://angel.co/aravindanve">angel.co/aravindanve</a>
-  </div>
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-    crossorigin="anonymous"></script>
+  <article>
+    <section>
+      <div class="section-body" style="margin-bottom: 0;">
+        <div class="user-card clearfix">
+          <div class="user-card-image">
+            <img src="image.jpg">
+          </div>
+          <div class="user-card-info">
+            <div class="user-card-info-primary">Aravindan Ve</div>
+            <div class="user-card-info-secondary">
+              I love working with new and emerging technologies; distributed and real-time applications; projects that require a high
+              degree of problem solving and creativity.
+            </div>
+            <div class="user-card-info-secondary" style="margin-left: -5px;">
+              <a class="no-style-link" href="https://github.com/aravindanve"><i class="x-icon icon-github-circled"></i> github.com/aravindanve</a>
+              <a class="no-style-link" href="https://linkedin.com/in/aravindanve"><i class="x-icon icon-linkedin"></i> linkedin.com/in/aravindanve</a>
+            </div>
+            <div class="user-card-info-secondary">
+              Senior Software Developer<br>
+              Bangalore, India
+            </div>
+            <!-- <div class="user-card-info-secondary">
+              <span class="phone">{{PHONE}}</span><br>
+              <a class="email" href="mailto:{{EMAIL}}">{{EMAIL}}</a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <header>Skills</header>
+      <div class="section-body">
+        <div class="section-sub-header">Industry Knowledge</div>
+        <div class="section-sub-body">
+          Microservice Architecture, Data Modeling, API Design, Live Streaming,
+          <span class="novice">Domain Driven Design (Novice)</span>
+        </div>
+        <div class="section-sub-header">Tools & Technologies</div>
+        <div class="section-sub-body">
+          TypeScript, JavaScript, NodeJS / ExpressJS, Python, Swift, PHP, PostgreSQL, MySQL, MongoDB, Redis, SQLite, WebRTC, WebSocket,
+          Docker, Kubernetes, GStreamer,
+          <span class="novice">Rust (Novice), Go (Novice), Objective-C (Novice)</span>
+        </div>
+        <div class="section-sub-header">Other</div>
+        <div class="section-sub-body">
+          Nginx, Apache, HTML, CSS, Webpack, Git, Shell Scripting, Amazon Web Services, Microsoft Azure, Adobe Creative Suite
+        </div>
+      </div>
+    </section>
+    <section>
+      <header>Experience &bull; 5+ yrs</header>
+      <div class="section-body">
+        <div class="section-sub-header">Senior Software Developer & Team Lead, vVents LLC &bull; Remote &bull; 2 yrs <span class="date-range">(Aug 2017 - Present)</span></div>
+        <div class="section-sub-body">
+          Web Backend Development, Database Design, Video Live Streaming and R&D
+          <ul>
+            <li>Designed and built the backend for a video live streaming & e-commerce platform from the ground up</li>
+            <li>Created data models for e-commerce, auto-renewing subscriptions, and real-time interactions</li>
+            <li>Integrated video live streaming and other functionalities into React, React Native and Swift (iOS) frontends</li>
+            <li>Worked on playback synchronization; co-designed cloud infrastructure and CI/CD</li>
+          </ul>
+        </div>
+        <div class="section-sub-header">Web Developer, Ripples Learning Services &bull; Bangalore &bull; 3 yrs 3 mos <span class="date-range">(Jun 2014 - Aug 2017)</span></div>
+        <div class="section-sub-body">
+          Web Backend & Frontend Development, Database Design, UI/UX Design and Product Research
+          <ul>
+            <li>Designed and built an assessment platform that included content sharing, social elements, privacy features,
+            gamification, notifications, file sharing and reporting</li>
+            <li>Built multiple productivity tools for internal consumption</li>
+          </ul>
+        </div>
+        <div class="section-sub-header">Freelance Filmmaker & Digital Artist &bull; 1 yr 10 mos <span class="date-range">(Aug 2012 - May 2014)</span></div>
+        <div class="section-sub-body">
+          Cinematography, Color-Grading, Photo and Video Manipulation, Motion Graphics, Graphic Design, and Post-Production
+        </div>
+      </div>
+    </section>
+    <section>
+      <header>Education</header>
+      <div class="section-body">
+        <div class="section-sub-body">
+          <b>Bachelor of Science (BS)</b>, Hindustan College of Arts and Science, <span>Major: Visual Communication</span>
+        </div>
+        <div class="section-sub-body">
+          <b>High School</b>, Chinmaya International Residential School, <span>Major: Physics, Chemistry, Math, and CS</span>
+        </div>
+      </div>
+    </section>
+  </article>
 </body>
 </html>
